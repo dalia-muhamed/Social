@@ -5,14 +5,16 @@
           background-color: white;
           display: flex;
           flex-direction: row;
-         flex-wrap: nowrap;}
+         flex-wrap: wrap;
+         overflow-x:hidden;
+       }
 
     
   .leftside{ display:flex;
              flex-direction:column;
              align-items: center;
              justify-content: center;
-             flex:0 0 25.5vw;
+             flex:0 0 0vw;
             } 
 
   .social ul{list-style-type: none;
@@ -24,7 +26,8 @@
              justify-content: flex-end;
              position: fixed;
              top: 5px;
-             left:50px;}
+             left:50px;
+             display: none;}
               
   .social ul:nth-child(2) {margin:55px 50px}
   .social .twittericon a{color:rgb(29, 155, 240);
@@ -127,19 +130,20 @@ form {display: flex;
                       border-bottom: 4px solid rgb(29, 155, 240);
                       border-radius: 2px;}
 
+ .container{ position: relative;}
+
 .imgtext {font-weight: bold;
-        text-shadow: 40px;
-        font-family: Tahoma, Arial, sans-serif;
-        position: absolute;
-        top: 62%;
-        left: 37%;
-        color:white;
-        font-size: 25px;
-        transform: translate(-50%, -50%);
-      }
-      .imgtext P{font-size: 13px;
-                 font-family: Arial, Helvetica, sans-serif;
-                 font-weight: 0;}
+           text-shadow: 40px;
+           font-family: Tahoma, Arial, sans-serif;
+           position: absolute;
+           top: 80%;
+           left: 5%;
+           color:white;
+          font-size: 25px;}
+                
+.imgtext P{font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+           font-weight: 0;}
           
        .row:nth-child(2){
         border-top: 1px solid rgb(199, 198, 198);
@@ -346,7 +350,7 @@ form {display: flex;
        .rightside{display:flex;
             flex-direction: column;
             align-items: flex-start;
-            flex: 0 0 34vw;}
+            flex: 0 0 0vw;}
 
   .rightside .col{font-size: 13px;
                   margin-left:25px;
@@ -354,7 +358,8 @@ form {display: flex;
                   padding-top:10px;
                   color:rgb(118, 118, 118);
                   font-weight: 400;
-                position:fixed;}   
+                  position:fixed;
+                  display: none;}   
         
   .col a:hover{text-decoration: underline;}              
 
@@ -400,11 +405,13 @@ form {display: flex;
           
           }  
       .footer article{margin-left: 90px;
-                      font-weight:10px }
+                      font-weight:10px;
+                      display: none; }
     .footer ul{list-style-type: none;
                display: flex;
-               align-items:center ;
-               margin-right: 0;}
+               justify-content:center ;
+               padding:0;
+               margin: 0;}
 
    .footer .signup{color:black}  
     
@@ -412,11 +419,13 @@ form {display: flex;
   
 
    .footer ul li {margin:10px;
+                  flex:0 0 42vw;
                   font-size: 1em;}
 
     ul li .login{background-color: rgb(29, 155, 240);
-                 border:1px solid white ;
+                 border:1px solid rgb(210, 208, 208) ;
                  border-radius: 20px;
+                
                  }  
      ul li .login:hover {background-color: rgb(59, 166, 238);}            
      ul li .signup{background-color: white;
@@ -425,5 +434,69 @@ form {display: flex;
      .footer ul li div{padding:5px 15px;
                       text-align: center;
                       font-weight: bold;}
+
+          
             
+   @media(min-width:900px){
+
+ .wrapper{ flex-wrap: nowrap;
+        overflow-y: scroll;}
+
+    
+  .leftside{flex:0 0 25.5vw;} 
+
+  .social ul{list-style-type: none;
+             margin: 0;
+             padding:0;
+             display:flex;
+             flex-direction:column;
+             align-items: center;
+             justify-content: flex-end;
+             position: fixed;
+             top: 5px;
+             left:50px;}
+              
+  .social ul:nth-child(2) {margin:55px 50px}
+  .social .twittericon a{color:rgb(29, 155, 240);
+                         display: inline-block;
+                         font-size: 1.8em;
+                         margin:0 58px
+                        }
+                        
+
+ .social ul li a  { display: block;
+                    flex:1;
+                    color:black;
+                    font-size: 1.3em;  
+                    margin:13px 10px;
+                    padding-left:0;}
+
+ .social i{margin: 0px 23px;
+           font-weight: 900;}         
+             
+  .social ul li .explore{font-weight: 650;} 
+
+   a {text-decoration: none;
+      cursor: pointer;} 
+  
+  .social .twittericon a:hover{background-color: aliceblue;}
+             
+   .social ul li a:hover{background-color:rgb(239, 236, 236) ;
+                         border-radius: 25px;}                    
    
+.main {min-width: 600px;}
+
+
+ 
+  .rightside .col{display: inline-block;}   
+    
+  .space{display: flex;
+        flex-direction: column;
+        justify-content: center;
+         flex:0 0 40vw;}
+
+      .footer article{display: inline-block; }
+   
+
+   .footer ul li {flex:0 0 50%;}
+  }
